@@ -19,7 +19,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public alertCtrl: AlertController) {
     this.initializeApp();
-
+    this.Mostrar();
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Compartir' },
@@ -36,6 +36,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
   }
 
   openPage(page) {
@@ -49,6 +50,14 @@ export class MyApp {
       title: 'Hola!',
       subTitle: 'Seguro deseas salir!!',
       buttons: ['Si','No']
+    });
+    alert.present();
+  }
+
+  Mostrar() {
+    const alert = this.alertCtrl.create({
+      title: 'Hola!',
+      subTitle: 'En esta zona robaron a hector!!'
     });
     alert.present();
   }
